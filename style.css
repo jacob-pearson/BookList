@@ -46,4 +46,20 @@ header,footer{
     width: 40.75rem;
     background-color: white;
     border-radius: 2.5rem;
+    display: grid;
+    align-items: center;
+}
+.list-content-wrapper{
+    background-color: var(--dark-bg-color);
+    height: 38rem;
+    display: grid;
+    justify-items: center;
+
+}
+.list-submit-wrapper{
+    background-color: white;
+    height: 4rem;
+    width: 32rem;
+    border-radius: 1rem;
+    align-self: end;
 }
