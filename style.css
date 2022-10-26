@@ -5,9 +5,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Roboto Slab', serif;
+}
 header{
     text-align: center;
-    font-family: 'Roboto Slab', serif;
+
 }
 h1{
     font-weight: 300;
