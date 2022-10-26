@@ -37,4 +37,13 @@ header,footer{
 .body-wrapper{
     background-color: var(--main-bg-color);
     height: 46.5rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.list-wrapper{
+    height: 43.75rem;
+    width: 40.75rem;
+    background-color: white;
+    border-radius: 2.5rem;
 }
