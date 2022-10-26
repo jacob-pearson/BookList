@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400&display=swap');
-
+:root{
+    --main-bg-color: #ECEFF4;
+    --dark-bg-color: #2E3440;
+    --book-read-color: #8FBCBB;
+    --book-unread-color: #D08770;
+    --book-submit-color: #A3BE8C;
+    --book-delete-color: #BF616A;
+    --form-box-color: #D8DEE9;
+    --box-shadow-color: #4C566A; /* 50% opacity */
+    
+}
 *{
     padding: 0;
     margin: 0;
@@ -21,4 +31,7 @@ header,footer{
     width: auto;
     display: grid;
     align-items: center;
+}
+main-wrapper{
+    background-color: ;
 }
