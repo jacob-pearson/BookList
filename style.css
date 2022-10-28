@@ -48,7 +48,7 @@ header,footer{
     background-color: white;
     border-radius: 2.5rem;
     display: grid;
-    grid-template-rows: 1fr 15fr 1fr;
+    grid-template-rows: 1fr 13fr 2fr 1fr;
     align-items: center;
     justify-items: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -58,7 +58,7 @@ header,footer{
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 85%;
+    width: 34.625rem;
     gap: 1rem;
 
 }
@@ -85,12 +85,22 @@ header,footer{
     height: 100%;
     width: 100%;
     justify-items: center;
+    grid-auto-rows: 4rem;
 
+}
+.submit-area{
+    background-color: var(--dark-bg-color);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
 }
 .list-submit-wrapper{
     background-color: white;
-    height: 10%;
-    width: 85%;
+    align-self: end;
+    height: 4rem;
+    width: 34.625rem;
     border-radius: 1rem;
     align-self: end;
     display: flex;
@@ -116,4 +126,8 @@ header,footer{
 }
 #submit-button:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.book-card{
+    width: 100%;
+    background-color: var(--main-bg-color);
 }
