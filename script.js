@@ -140,6 +140,21 @@ let bookList = []
 let thehobbit = new Book('The Hobbit', 'Tolkien', '295')
 let theHobbit2 = new Book('the hobbit 2', 'Tolkien', '296')
 
+
+const bookSubmit = document.getElementById('submit-button')
+bookSubmit.onclick = function (){
+    const bookTitleInput = document.getElementById('book-title').value
+    const bookAuthorInput = document.getElementById('book-author').value
+    const bookPagesInput = document.getElementById('book-pages').value
+    if(bookTitleInput.length === 0 || bookAuthorInput.length === 0 || bookPagesInput === 0){
+        alert('Your book information is incomplete. Please make sure to add a Title, Author, and number of Pages.')
+    }else{
+        let bookToAdd = new Book(bookTitleInput, bookAuthorInput, bookPagesInput)
+        addBookToLibrary(bookToAdd, bookList)
+        clearList()
+        displayBooks(bookList)
+    }
+}
 addBookToLibrary(thehobbit, bookList)
 addBookToLibrary(theHobbit2, bookList)
 displayBooks(bookList)
