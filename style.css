@@ -53,26 +53,24 @@ header,footer{
     justify-items: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.list-header{
+.list-header, .book-content-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 34.625rem;
     gap: 1rem;
+    text-align: center;
 
 }
 .list-header>p{
     width: 25%;
+    
 }
 .right-border{
     border-right: var(--dark-bg-color) solid 2px;
 }
 .left-border{
     border-left: var(--dark-bg-color) solid 2px;
-}
-.list-header>p{
-    width: 25%;
-    text-align: center;
 }
 .blank{
     width: 2rem;
@@ -129,4 +127,60 @@ header,footer{
 .book-card{
     width: 100%;
     background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+
+
+}
+.book-content-wrapper{
+    height: 2rem;
+    border-radius: .5rem;
+    width: 500px;
+    background-color: var(--book-read-color);
+}
+.content{
+    background-color: var(--book-read-color);
+    color: white;
+    font-weight: 100;
+    height: 2rem;
+    width: 33%;
+    padding-top: 5px;
+    border-radius: .5rem;
+
+
+}
+.book-button-wrapper{
+    width: 4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+}
+#unread, #read, #delete{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: none;
+}
+#unread:active, #read:active,#delete:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#unread{
+    background-color: var(--book-unread-color);
+}
+#read{
+    background-color: var(--book-read-color);
+}
+#delete{
+    background-color: var(--book-delete-color);
+}
+.border-left-white{
+    border-left: white solid 2px;
+}
+.border-right-white{
+    border-right: white solid 2px;
 }
