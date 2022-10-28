@@ -36,10 +36,23 @@ Book.prototype.unread = function(){
 }
 
 function displayBooks(bookList){
-    
+    for(let book in bookList){
+        let bookIndex = book
+        let bookTitle = bookList[book].title
+        let bookAuthor = bookList[book].author
+        let bookPages = bookList[book].pages
+        bookList[book].unread()
+        let bookStatus = bookList[book].status
+        console.log(bookIndex + ' ' + bookTitle + ' ' + bookAuthor + ' ' +bookPages + ' ' +bookStatus)
+    }
 
 
 }
+displayBooks(bookList)
+deleteBook(0, bookList)
+displayBooks(bookList)
+deleteBook(0, bookList)
+displayBooks(bookList)
 
 
 
