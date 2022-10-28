@@ -56,7 +56,6 @@ header,footer{
 .list-header{
     display: flex;
     justify-content: center;
-    align-content: center;
     align-items: center;
     width: 34.625rem;
     gap: 1rem;
