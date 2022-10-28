@@ -28,7 +28,7 @@ h1{
     font-size: 2.5rem;
 }
 header,footer{
-    height: 6.25rem;
+    height: 10%;
     display: grid;
     align-items: center;
 }
@@ -37,7 +37,7 @@ header,footer{
 }
 .body-wrapper{
     background-color: var(--main-bg-color);
-    height: 46.5rem;
+    height: 80%;
     display: grid;
     align-items: center;
     justify-items: center;
