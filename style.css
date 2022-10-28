@@ -50,13 +50,16 @@ header,footer{
     display: grid;
     grid-template-rows: 1fr 15fr 1fr;
     align-items: center;
+    justify-items: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .list-header{
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 100%;
+    align-items: center;
+    width: 85%;
+    gap: 1rem;
 
 }
 .list-header>p{
@@ -72,17 +75,22 @@ header,footer{
     width: 25%;
     text-align: center;
 }
+.blank{
+    width: 2rem;
+    height: 2rem;
+}
 .list-content-wrapper{
     background-color: var(--dark-bg-color);
     display: grid;
     height: 100%;
+    width: 100%;
     justify-items: center;
 
 }
 .list-submit-wrapper{
     background-color: white;
-    height: 4rem;
-    width: auto;
+    height: 10%;
+    width: 85%;
     border-radius: 1rem;
     align-self: end;
     display: flex;
