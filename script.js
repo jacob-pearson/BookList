@@ -1,5 +1,3 @@
-let bookList = []
-
 function Book(title, author, pages){
     this.title = title
     this.author = author
@@ -13,10 +11,6 @@ function addBookToLibrary(book, bookList){
 
 
 
-let thehobbit = new Book('The Hobbit', 'Tolkien', '295')
-let theHobbit2 = new Book('the hobbit 2', 'Tolkien', '296')
-addBookToLibrary(thehobbit, bookList)
-addBookToLibrary(theHobbit2, bookList)
 
 function deleteBook(bookIndex, bookList){
     bookList.splice(bookList[bookIndex], 1)
@@ -34,25 +28,126 @@ Book.prototype.unread = function(){
     this.status = 'unread'
 
 }
+function clearList(){
+    const bookList = document.getElementById('list-content-wrapper')
+    bookList.textContent = ''
+}
+function buildBookCard(bookIndex, bookTitle, bookAuthor, bookPages, bookStatus){
+    const bookCard = document.createElement('div')
+        bookCard.classList.add('book-card')
+
+    const bookContentWrapper = document.createElement('div')
+        bookContentWrapper.classList.add('book-content-wrapper')
+
+    const bookTitleContent = document.createElement('p')
+        bookTitleContent.classList.add('content')
+        bookTitleContent.textContent = bookTitle
+
+    const bookAuthorContent = document.createElement('p')
+        bookAuthorContent.classList.add('content')
+        bookAuthorContent.textContent = bookAuthor
+
+    const bookPagesContent = document.createElement('p')
+        bookPagesContent.classList.add('content')
+        bookPagesContent.textContent = bookPages
+
+    const bookButtonWrapper = document.createElement('div')
+        bookButtonWrapper.classList.add('book-button-wrapper')
+
+    const bookUnreadButton = document.createElement('INPUT')
+        bookUnreadButton.setAttribute('type', 'button')
+        bookUnreadButton.classList.add('unread')
+        bookUnreadButton.setAttribute('data-index', bookIndex)
+
+    const bookReadButton = document.createElement('INPUT')
+        bookReadButton.setAttribute('type', 'button')
+        bookReadButton.classList.add('read')
+        bookReadButton.setAttribute('data-index', bookIndex)
+
+    const bookDeleteButton = document.createElement('INPUT')
+        bookDeleteButton.setAttribute('type', 'button')
+        bookDeleteButton.classList.add('delete')
+        bookDeleteButton.setAttribute('data-index', bookIndex)
+
+    if(bookStatus == 'read'){
+        bookContentWrapper.classList.add('read-book')
+    }else{
+        bookContentWrapper.classList.add('unread-book')
+    }
+
+    bookCard.appendChild(bookContentWrapper)
+    bookContentWrapper.appendChild(bookTitleContent)
+    bookContentWrapper.appendChild(bookAuthorContent)
+    bookContentWrapper.appendChild(bookPagesContent)
+    bookCard.appendChild(bookButtonWrapper)
+    bookButtonWrapper.appendChild(bookUnreadButton)
+    bookButtonWrapper.appendChild(bookReadButton)
+    bookButtonWrapper.appendChild(bookDeleteButton)
+
+    let listContentWrapper = document.getElementById('list-content-wrapper')
+    listContentWrapper.appendChild(bookCard)
+
+}
 
 function displayBooks(bookList){
+
     for(let book in bookList){
         let bookIndex = book
         let bookTitle = bookList[book].title
         let bookAuthor = bookList[book].author
         let bookPages = bookList[book].pages
-        bookList[book].unread()
         let bookStatus = bookList[book].status
-        console.log(bookIndex + ' ' + bookTitle + ' ' + bookAuthor + ' ' +bookPages + ' ' +bookStatus)
+        buildBookCard(bookIndex, bookTitle, bookAuthor, bookPages, bookStatus)
     }
+
+    const readButtons = document.querySelectorAll('.read')
+    const unreadButtons = document.querySelectorAll('.unread')
+    const deleteButtons = document.querySelectorAll('.delete')
+
+    readButtons.forEach(readButton =>{
+        readButton.onclick = function(){
+            let index = this.getAttribute('data-index')
+            let bookToChange = bookList[index]
+            bookToChange.read()
+            console.log(bookList[index])
+            clearList()
+            displayBooks(bookList)
+        }})
+
+    unreadButtons.forEach(unreadButton =>{
+        unreadButton.onclick = function(){
+            let index = this.getAttribute('data-index')
+            let bookToChange = bookList[index]
+            bookToChange.unread()
+            clearList()
+            displayBooks(bookList)
+        }
+    })
+    deleteButtons.forEach(deleteButton =>{
+        deleteButton.onclick = function(){
+            let index = this.getAttribute('data-index')
+            deleteBook(index, bookList)
+            clearList()
+            displayBooks(bookList)
+        }
+    })
 
 
 }
+
+
+let bookList = []
+let thehobbit = new Book('The Hobbit', 'Tolkien', '295')
+let theHobbit2 = new Book('the hobbit 2', 'Tolkien', '296')
+
+addBookToLibrary(thehobbit, bookList)
+addBookToLibrary(theHobbit2, bookList)
 displayBooks(bookList)
-deleteBook(0, bookList)
-displayBooks(bookList)
-deleteBook(0, bookList)
-displayBooks(bookList)
+
+
+
+
+
 
 
 

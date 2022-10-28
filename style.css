@@ -76,7 +76,7 @@ header,footer{
     width: 2rem;
     height: 2rem;
 }
-.list-content-wrapper{
+#list-content-wrapper{
     background-color: var(--dark-bg-color);
     display: grid;
     height: 100%;
@@ -142,7 +142,6 @@ header,footer{
     background-color: var(--book-read-color);
 }
 .content{
-    background-color: var(--book-read-color);
     color: white;
     font-weight: 100;
     height: 2rem;
@@ -161,23 +160,29 @@ header,footer{
     justify-content: center;
     align-items: center;
 }
-#unread, #read, #delete{
+.unread, .read, .delete{
     width: 20px;
     height: 20px;
     border-radius: 100%;
     border: none;
 }
-#unread:active, #read:active,#delete:active{
+.unread:active, .read:active, .delete:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-#unread{
+.unread{
     background-color: var(--book-unread-color);
 }
-#read{
+.read{
     background-color: var(--book-read-color);
 }
-#delete{
+.delete{
     background-color: var(--book-delete-color);
+}
+.unread-book{
+    background-color: var(--book-unread-color);
+}
+.read-book{
+    background-color: var(--book-read-color);
 }
 .border-left-white{
     border-left: white solid 2px;
